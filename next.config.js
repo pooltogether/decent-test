@@ -24,7 +24,7 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true
   },
-  exportTrailingSlash: true
+  trailingSlash: true
 }
 
 const allConfig = withBundleAnalyzer(
