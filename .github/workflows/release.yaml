@@ -9,6 +9,7 @@ on:
 jobs:
   bump_version:
     name: Bump Version
+    id: bump_version
     runs-on: ubuntu-latest
     outputs:
       new_tag: ${{ steps.github_tag_action.outputs.new_tag }}
@@ -75,8 +76,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ jobs.bump_version.outputs.new_tag }}
-          release_name: Release ${{ jobs.bump_version.outputs.new_tag }}
+          tag_name: v${{ needs.bump_version.outputs.new_tag }}
+          release_name: Release ${{ needs.bump_version.outputs.new_tag }}
           body: |
             IPFS hash of the deployment:
             - CIDv0: `${{ steps.upload.outputs.hash }}`
