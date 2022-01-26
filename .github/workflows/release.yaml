@@ -71,11 +71,11 @@ jobs:
 
       - name: Create GitHub Release
         id: create_release
-        uses: actions/create-release@v1.1.4
+        uses: actions/create-release@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ needs.bump_version.outputs.new_tag }}
+          tag_name: v${{ needs.bump_version.outputs.new_tag }}
           release_name: Release ${{ needs.bump_version.outputs.new_tag }}
           body: |
             IPFS hash of the deployment:
