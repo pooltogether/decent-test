@@ -22,7 +22,7 @@ jobs:
         uses: mathieudutour/github-tag-action@331898d5052eedac9b15fec867b5ba66ebf9b692
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          release_branches: .*
+          release_branches: main
           default_bump: false
 
   release:
@@ -75,8 +75,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ needs.bump_version.outputs.new_tag }}
+          release_name: Release ${{ needs.bump_version.outputs.new_tag }}
           body: |
             IPFS hash of the deployment:
             - CIDv0: `${{ steps.upload.outputs.hash }}`
