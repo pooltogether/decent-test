@@ -1,4 +1,4 @@
-# PoolTogether V4 UI
+# PoolTogether V4 UI Decentralization Test
 
 Interact with V4 of the PoolTogether prize-savings protocol.
 
