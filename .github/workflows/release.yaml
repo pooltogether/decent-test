@@ -9,7 +9,6 @@ on:
 jobs:
   bump_version:
     name: Bump Version
-    id: bump_version
     runs-on: ubuntu-latest
     outputs:
       new_tag: ${{ steps.github_tag_action.outputs.new_tag }}
