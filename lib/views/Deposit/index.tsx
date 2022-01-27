@@ -9,8 +9,8 @@ export const DepositUI = () => {
   return (
     <PagePadding className='flex flex-col space-y-6'>
       <UpcomingPrizeCard className='mt-4' />
-      aslkdnakjfnsajkn
       <DepositCard />
+      v4-ui v1.1.1
     </PagePadding>
   )
 }
